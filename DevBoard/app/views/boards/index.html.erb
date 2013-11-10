@@ -1,0 +1,12 @@
+<h1>Listing all....</h1>
+
+<table>
+  <% @boards.each do |board| %>
+    <tr>
+      <td><%= board.text %></td>
+      <td><%= link_to 'Destroy', board_path(board),
+                      method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New', new_board_path %>
